@@ -1,0 +1,2386 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alopecia Areata – आयुर्वेदिक केयर फॉर्मूला</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Halant:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    /* ===== ROOT & RESET ===== */
+    :root {
+      --R: #B00000;
+      --RD: #5C0000;
+      --Rm: #8B0000;
+      --B: #0A0A0A;
+      --BS: #141414;
+      --W: #FFFFFF;
+      --t2xl: 28px;
+      --txl: 20px;
+      --tlg: 17px;
+      --tbs: 14px;
+      --tsm: 12px;
+      --txs: 10px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: #111;
+      font-family: 'Hind', sans-serif;
+      color: var(--W);
+      display: flex;
+      justify-content: center;
+      min-height: 100vh
+    }
+
+    .pw {
+      width: 100%;
+      max-width: 450px;
+      background: var(--B);
+      overflow: hidden;
+      position: relative
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    .hl {
+      font-family: 'Halant', serif
+    }
+
+    h2,
+    .st {
+      font-size: var(--t2xl);
+      color: var(--W);
+      line-height: 1.25;
+      margin-bottom: 8px;
+      font-family: 'Halant', serif
+    }
+
+    h3,
+    h4 {
+      font-size: var(--txl);
+      color: var(--W);
+      line-height: 1.3;
+      font-family: 'Halant', serif
+    }
+
+    p {
+      font-size: var(--tlg);
+      color: var(--W) !important;
+      line-height: 1.75
+    }
+
+    section {
+      position: relative
+    }
+
+    .sl {
+      font-size: var(--txl);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--R);
+      margin-bottom: 8px;
+      display: block
+    }
+
+    /* ===== SHIMMER / SHINE LOADING EFFECT ===== */
+    .img-wrap {
+      position: relative;
+      overflow: hidden
+    }
+
+    .img-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, .18) 50%, transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmer 2.2s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0
+      }
+
+      100% {
+        background-position: 200% 0
+      }
+    }
+
+    /* Shine pulse on hover */
+    .img-wrap:hover::before {
+      animation: shine-pulse .6s ease forwards
+    }
+
+    @keyframes shine-pulse {
+      0% {
+        background-position: -200% 0;
+        opacity: 1
+      }
+
+      100% {
+        background-position: 200% 0;
+        opacity: 0
+      }
+    }
+
+    /* ===== FADE-IN SCROLL ===== */
+    .fi {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .6s ease, transform .6s ease
+    }
+
+    .fi.vis {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    /* ===== BLINKING DOT ===== */
+    .dot-live {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff3333;
+      animation: blink 1s infinite
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .2
+      }
+    }
+
+    /* ===========================
+   SECTION 1 — HOOK
+   Clip-path: diagonal bottom cut
+   =========================== */
+    .hook {
+      background: var(--RD);
+      clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+      padding-bottom: 60px;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column
+    }
+
+    .htb {
+      width: 100%;
+      background: var(--B);
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .htb span {
+      font-size: var(--txs);
+      color: #ff6b6b;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600
+    }
+
+    .h-prod-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(.82);
+      transition: transform .6s ease
+    }
+
+    .h-prod-img:hover {
+      transform: scale(1.03)
+    }
+
+    .h-overlay {
+      position: absolute;
+      top: 42px;
+      left: 0;
+      right: 0;
+      height: 300px;
+      background: linear-gradient(to bottom, transparent 35%, var(--RD) 100%)
+    }
+
+    .hcont {
+      padding: 0 20px 30px;
+      text-align: center;
+      z-index: 1;
+      width: 100%
+    }
+
+    .hbadge {
+      display: inline-block;
+      background: var(--R);
+      color: #fff;
+      font-size: var(--txs);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 2px;
+      margin-bottom: 14px;
+      margin-top: -16px
+    }
+
+    .hook h1 {
+      font-size: 34px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, .6)
+    }
+
+    .hook h1 span {
+      color: #ffcccc;
+      display: block;
+      font-size: var(--txl)
+    }
+
+    .hrisk {
+      background: rgba(0, 0, 0, .45);
+      border-left: 3px solid var(--R);
+      padding: 12px 15px;
+      text-align: left;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 20px
+    }
+
+    .horgans {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      margin-bottom: 20px
+    }
+
+    .oitem {
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 8px;
+      padding: 10px 4px;
+      text-align: center;
+      font-size: var(--txs);
+      color: #ffcccc;
+      line-height: 1.4;
+      cursor: pointer;
+      transition: background .3s, border-color .3s, box-shadow .3s, transform .3s
+    }
+
+    .oitem:hover {
+      background: rgba(176, 0, 0, .35);
+      border-color: var(--R);
+      box-shadow: 0 0 16px rgba(176, 0, 0, .6);
+      transform: translateY(-4px)
+    }
+
+    .oitem .oe {
+      font-size: 22px;
+      display: block;
+      margin-bottom: 4px
+    }
+
+    .hstat {
+      background: var(--R);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 20px
+    }
+
+    .hstat strong {
+      font-size: 30px;
+      font-family: 'Halant', serif;
+      display: block
+    }
+
+    .hstat span {
+      font-size: var(--tbs);
+      opacity: .95;
+      color: #fff
+    }
+
+    .cta-m {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: #fff;
+      color: var(--RD);
+      font-family: 'Halant', serif;
+      font-size: var(--txl);
+      font-weight: 700;
+      text-align: center;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 1px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .4);
+      transition: transform .2s, box-shadow .2s
+    }
+
+    .cta-m:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .5)
+    }
+
+    /* ===========================
+   SECTION 2 — SIGNS
+   Clip-path: wavy top polygon
+   =========================== */
+    .signs-sec {
+      background: var(--B);
+      padding: 50px 20px 40px;
+      clip-path: polygon(0 6%, 25% 0, 75% 3%, 100% 0, 100% 100%, 0 100%);
+      margin-top: -30px;
+    }
+
+    .sign-card {
+      background: var(--BS);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, .06);
+      cursor: pointer;
+      position: relative;
+      transition: border-color .3s, box-shadow .3s
+    }
+
+    .sign-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0;
+      background: var(--R);
+      transition: width .3s ease;
+      z-index: 2
+    }
+
+    .sign-card:hover::before {
+      width: 4px
+    }
+
+    .sign-card:hover {
+      border-color: rgba(176, 0, 0, .5);
+      box-shadow: 0 4px 24px rgba(176, 0, 0, .2)
+    }
+
+    /* CLIP PATH 2 — signs image: rhombus/parallelogram */
+    .sign-img-clip {
+      width: 100%;
+      height: 170px;
+      overflow: hidden;
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+
+    .sign-img-clip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.55) brightness(.72);
+      transition: transform .5s, filter .5s, scale .5s
+    }
+
+    .sign-card:hover .sign-img-clip img {
+      transform: scale(1.08);
+      filter: saturate(.85) brightness(.9)
+    }
+
+    .sign-txt {
+      padding: 14px 16px 18px
+    }
+
+    .sign-icon {
+      font-size: 20px;
+      margin-bottom: 6px
+    }
+
+    .sign-ttl {
+      font-family: 'Halant', serif;
+      font-size: var(--txl);
+      color: var(--W);
+      margin-bottom: 6px
+    }
+
+    /* ===========================
+   SECTION 3 — SUPPORT
+   Clip-path: arrow/chevron top
+   =========================== */
+    .support-sec {
+      background: var(--RD);
+      padding: 60px 20px 40px;
+      overflow: hidden;
+      clip-path: polygon(0 0, 50% 5%, 100% 0, 100% 100%, 0 100%);
+      margin-top: -20px;
+    }
+
+    .sup-hero-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 22px;
+      height: 200px;
+      /* CLIP PATH 3 — hero image: trapezoid */
+      clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+    }
+
+    .sup-hero-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(.78) saturate(.7);
+      transition: transform .5s, filter .5s
+    }
+
+    .sup-hero-wrap:hover img {
+      transform: scale(1.05);
+      filter: brightness(.9) saturate(.9)
+    }
+
+    .sup-pts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 20px
+    }
+
+    .sup-pt {
+      background: rgba(0, 0, 0, .4);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform .3s, box-shadow .3s
+    }
+
+    .sup-pt:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .5)
+    }
+
+    /* CLIP PATH 3b — support points image: hexagonal top */
+    .sp-clip {
+      width: 100%;
+      height: 100px;
+      overflow: hidden;
+      clip-path: polygon(8% 0, 92% 0, 100% 50%, 92% 100%, 8% 100%, 0 50%)
+    }
+
+    .sp-clip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(.68) saturate(.5);
+      transition: filter .5s, transform .5s
+    }
+
+    .sup-pt:hover .sp-clip img {
+      transform: scale(1.09);
+      filter: brightness(.88) saturate(.75)
+    }
+
+    .sp-txt {
+      padding: 10px 12px 14px
+    }
+
+    /* ===========================
+   SECTION 4 — BENEFITS
+   Clip-path: staggered notch bottom
+   =========================== */
+    .benefits-sec {
+      background: var(--BS);
+      padding: 55px 20px 110px;
+      clip-path: polygon(0 0, 100% 0, 100% 92%, 75% 96%, 50% 92%, 25% 96%, 0 92%);
+      margin-top: -20px;
+    }
+
+    .bn-list {
+      margin-top: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px
+    }
+
+    .bn-node {
+      background: var(--B);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .06);
+      cursor: pointer;
+      position: relative;
+      transition: box-shadow .3s
+    }
+
+    .bn-node::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: var(--R);
+      transition: left .45s ease
+    }
+
+    .bn-node:hover::after {
+      left: 0
+    }
+
+    .bn-node:hover {
+      box-shadow: 0 6px 28px rgba(176, 0, 0, .25)
+    }
+
+    /* CLIP PATH 4 — benefit image: wave bottom */
+    .bn-clip {
+      width: 100%;
+      height: 140px;
+      overflow: hidden;
+      clip-path: ellipse(55% 100% at 50% 0%)
+    }
+
+    .bn-clip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(.62) saturate(.55);
+      transition: transform .5s, filter .5s
+    }
+
+    .bn-node:hover .bn-clip img {
+      transform: scale(1.06);
+      filter: brightness(.82) saturate(.75)
+    }
+
+    .bn-txt {
+      padding: 14px 16px 16px
+    }
+
+    .bn-txt h4 {
+      color: #ffcccc;
+      margin-bottom: 6px
+    }
+
+    /* ===========================
+   SECTION 5 — HERBS
+   Clip-path: slanted left side
+   =========================== */
+    .herbs-sec {
+      background: var(--B);
+      padding: 60px 20px 40px;
+      clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 96%);
+      margin-top: -70px;
+    }
+
+    .herbs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      background: #1a0000;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 26px
+    }
+
+    .herb-cell:last-child:nth-child(odd) {
+      grid-column: 1/-1
+    }
+
+    .herb-cell {
+      background: var(--B);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer
+    }
+
+    /* CLIP PATH 5 — herb image: diagonal corner cut */
+    .hc-clip {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%)
+    }
+
+    .herb-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* filter: grayscale(.85) brightness(.58) sepia(.35); */
+      transition: filter .6s, transform .6s
+    }
+
+    .herb-cell:hover img {
+      filter: grayscale(0) brightness(.86) sepia(0);
+      transform: scale(1.1)
+    }
+
+    .herb-num {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: var(--R);
+      color: #fff;
+      font-size: var(--txs);
+      font-weight: 700;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 4
+    }
+
+    .herb-info {
+      padding: 10px 12px 14px
+    }
+
+    .herb-info h4 {
+      color: #ffdddd;
+      margin-bottom: 4px
+    }
+
+    .cert-strip {
+      display: flex;
+      gap: 8px;
+      margin-top: 20px
+    }
+
+    .cert-b {
+      flex: 1;
+      background: rgba(139, 0, 0, .25);
+      border: 1px solid rgba(139, 0, 0, .5);
+      border-radius: 8px;
+      padding: 10px 8px;
+      text-align: center;
+      font-size: var(--base);
+      color: #ffcccc;
+      line-height: 1.4;
+      transition: background .3s, border-color .3s;
+      cursor: pointer
+    }
+
+    .cert-b:hover {
+      background: rgba(176, 0, 0, .4);
+      border-color: var(--R)
+    }
+
+    .cert-b .ci {
+      font-size: 18px;
+      display: block;
+      margin-bottom: 4px
+    }
+    .cert-b span {
+      font-size: 28px;
+      display: block;
+      margin-bottom: 4px
+    }
+
+    /* ===========================
+   SECTION 6 — BEFORE/AFTER
+   Clip-path: concave arc top
+   =========================== */
+    .ba-sec {
+      background: var(--BS);
+      padding: 60px 20px 40px;
+      clip-path: polygon(0 5%, 50% 0, 100% 5%, 100% 100%, 0 100%);
+      margin-top: -20px;
+    }
+
+    .ba-vis {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 26px 0;
+      height: 300px
+    }
+
+    .ba-half {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%
+    }
+
+    .ba-before {
+      left: 0
+    }
+
+    .ba-after {
+      right: 0
+    }
+
+    .ba-half img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .ba-before img {
+      filter: grayscale(.85) brightness(.65)
+    }
+
+    .ba-after img {
+      filter: brightness(.85) saturate(1.05)
+    }
+
+    .ba-lbl {
+      position: absolute;
+      bottom: 12px;
+      background: rgba(0, 0, 0, .78);
+      color: #fff;
+      font-size: var(--tsm);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      letter-spacing: 1px
+    }
+
+    .ba-lbl.before {
+      left: 10px;
+      border-left: 3px solid #aaa
+    }
+
+    .ba-lbl.after {
+      right: 10px;
+      border-left: 3px solid #55ff55
+    }
+
+    .ba-div {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #fff;
+      transform: translateX(-50%);
+      z-index: 2
+    }
+
+    .ba-div::after {
+      content: '◀ ▶';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      color: var(--B);
+      font-size: 10px;
+      padding: 4px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      font-weight: 700
+    }
+
+    .ba-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+      perspective: 800px
+    }
+
+    .ba-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .08);
+      transition: transform .4s, box-shadow .4s;
+      cursor: pointer
+    }
+
+    .ba-card:hover {
+      transform: rotateY(5deg) scale(1.02);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .55)
+    }
+
+    .ba-ch {
+      padding: 9px 12px;
+      font-size: var(--tsm);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase
+    }
+
+    .ba-card.bc .ba-ch {
+      background: #2a2a2a;
+      color: #ccc
+    }
+
+    .ba-card.ac .ba-ch {
+      background: var(--base);
+      color: #fff
+    }
+
+    .ba-cb {
+      background: var(--B);
+      padding: 10px
+    }
+
+    .ba-pt {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, .03)
+    }
+
+    /* CLIP PATH 6 — ba-point image: stadium shape */
+    .ba-pt .bpc {
+      width: 100%;
+      height: 140px;
+      overflow: hidden;
+      clip-path: inset(0 0 0 0 round 8px 8px 0 0)
+    }
+
+    .ba-pt .bpc img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* filter: brightness(.65); */
+      transition: filter .3s, transform .4s
+    }
+
+    .ba-card:hover .ba-pt .bpc img {
+      filter: brightness(.85);
+      transform: scale(1.1)
+    }
+
+    .ba-ptext {
+      font-size: var(--txl);
+      color: var(--W) !important;
+      line-height: 1.4;
+      padding: 7px 8px
+    }
+
+    .ba-card.bc .ba-ptext {
+      color: #ffbbbb !important
+    }
+
+    .ba-card.ac .ba-ptext {
+      color: #aaffaa !important
+    }
+
+    /* ===========================
+   SECTION 7 — EXPERT
+   Clip-path: left diagonal
+   =========================== */
+    .expert-sec {
+      background: var(--RD);
+      padding: 60px 20px 40px;
+      overflow: hidden;
+      position: relative;
+      clip-path: polygon(0 0, 100% 3%, 100% 97%, 0 100%);
+      margin-top: -20px;
+    }
+
+    .expert-sec::before {
+      content: '"';
+      position: absolute;
+      top: -30px;
+      left: 10px;
+      font-size: 200px;
+      font-family: 'Halant', serif;
+      color: rgba(255, 255, 255, .04);
+      line-height: 1
+    }
+
+    .exp-hero {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin: 24px 0 20px;
+      background: rgba(0, 0, 0, .35);
+      border-radius: 10px;
+      padding: 16px;
+      cursor: pointer;
+      transition: background .3s, box-shadow .3s
+    }
+
+    .exp-hero:hover {
+      background: rgba(0, 0, 0, .52);
+      box-shadow: 0 0 0 2px rgba(176, 0, 0, .55), 0 8px 30px rgba(0, 0, 0, .4)
+    }
+
+    /* CLIP PATH 7 — expert avatar: hexagon */
+    .exp-av-clip {
+      width: 120px;
+      height: 120px;
+      flex-shrink: 0;
+      overflow: hidden;
+      clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    }
+
+    .exp-av-clip img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      /* filter: brightness(.8) saturate(.7); */
+      transition: filter .3s, transform .4s
+    }
+
+    .exp-hero:hover .exp-av-clip img {
+      filter: brightness(.95) saturate(.9);
+      transform: scale(1.08)
+    }
+
+    .exp-meta h4 {
+      margin-bottom: 4px
+    }
+
+    .exp-meta span {
+      font-size: var(--tbs);
+      color: #ffffff
+    }
+
+    .exp-quote {
+      font-style: italic;
+      border-left: 3px solid rgba(255, 255, 255, .3);
+      padding-left: 14px;
+      margin-bottom: 20px
+    }
+
+    .exp-imgs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px
+    }
+
+    /* CLIP PATH 7b — expert img row: pentagon */
+    .exp-img-clip {
+      overflow: hidden;
+      clip-path: polygon(50% 0, 100% 20%, 100% 100%, 0 100%, 0 20%)
+    }
+
+    .exp-img-clip img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      /* filter: brightness(.6) saturate(.5); */
+      transition: filter .3s, transform .4s;
+      cursor: pointer
+    }
+
+    .exp-img-clip img:hover {
+      filter: brightness(.9) saturate(.8);
+      transform: scale(1.1)
+    }
+
+    /* ===========================
+   SECTION 8 — STORY
+   Clip-path: ribbon/notch center top
+   =========================== */
+    .story-sec {
+      background: var(--B);
+      padding: 60px 20px 40px;
+      clip-path: polygon(0 0, 45% 0, 50% 4%, 55% 0, 100% 0, 100% 100%, 0 100%);
+      margin-top: -20px;
+    }
+
+    .story-person {
+      position: relative;
+      margin: 30px 0;
+      margin-bottom: 30px;
+      cursor: pointer
+    }
+
+    /* CLIP PATH 8 — story person image: wide arc bottom */
+    .sp-img-clip {
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);
+      border-radius: 0
+    }
+
+    .sp-img-clip img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      /* filter: grayscale(.6) brightness(.65); */
+      display: block;
+      transition: filter .4s, transform .5s
+    }
+
+    .story-person:hover .sp-img-clip img {
+      filter: grayscale(.3) brightness(.82);
+      transform: scale(1.04)
+    }
+
+    .sp-overlay {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, .9));
+      padding: 36px 16px 16px
+    }
+
+    .sp-name {
+      font-family: 'Halant', serif;
+      font-size: var(--txl);
+      color: #fff;
+      margin-bottom: 2px
+    }
+
+    .sp-age {
+      font-size: var(--tbs);
+      color: #ffb3b3
+    }
+
+    .story-tl {
+      padding-left: 20px;
+      border-left: 2px dashed var(--R);
+      margin: 22px 0
+    }
+
+    .s-step {
+      margin-bottom: 18px;
+      background: rgba(255, 255, 255, .03);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .05);
+      cursor: pointer;
+      transition: transform .3s, border-color .3s
+    }
+
+    .s-step:hover {
+      transform: translateX(7px);
+      border-color: rgba(176, 0, 0, .4)
+    }
+
+    /* CLIP PATH 8b — story step image: arrow right */
+    .ss-clip {
+      overflow: hidden;
+      clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%)
+    }
+
+    .ss-clip img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      /* filter: brightness(.6) saturate(.6); */
+      transition: filter .4s, transform .5s;
+      display: block
+    }
+
+    .s-step:hover .ss-clip img {
+      filter: brightness(.82) saturate(.82);
+      transform: scale(1.08)
+    }
+
+    .ss-info {
+      padding: 12px 14px 14px
+    }
+
+    .ss-info h5 {
+      font-family: 'Halant', serif;
+      font-size: var(--txl);
+      color: #ffcccc;
+      margin-bottom: 4px
+    }
+
+    .s-qbox {
+      background: var(--RD);
+      border-radius: 10px;
+      padding: 18px 18px 18px 24px;
+      margin-top: 20px;
+      position: relative;
+      border-left: 4px solid rgba(255, 255, 255, .25)
+    }
+
+    .s-qbox::before {
+      content: '❝';
+      position: absolute;
+      top: -14px;
+      left: 14px;
+      font-size: 30px;
+      color: var(--R)
+    }
+
+    /* ===========================
+   SECTION 9 — REVIEWS
+   Clip-path: star-burst top edge
+   =========================== */
+    .reviews-sec {
+      background: var(--BS);
+      padding: 20px 20px 40px;
+      clip-path: polygon(0 3%, 10% 0, 20% 3%, 30% 0, 40% 3%, 50% 0, 60% 3%, 70% 0, 80% 3%, 90% 0, 100% 3%, 100% 100%, 0 100%);
+      margin-top: -20px;
+    }
+
+    .rev-avg {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--B);
+      border-radius: 10px;
+      padding: 18px;
+      margin: 20px 0;
+      border: 1px solid rgba(255, 255, 255, .07)
+    }
+
+    .rev-avg .br {
+      font-family: 'Halant', serif;
+      font-size: 54px;
+      color: #fff;
+      line-height: 1
+    }
+
+    .rev-avg .stars {
+      color: #FFD700;
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-bottom: 4px
+    }
+
+    .rev-card {
+      background: var(--B);
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      position: relative;
+      cursor: pointer;
+      transition: transform .35s, box-shadow .35s
+    }
+
+    .rev-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--R)
+    }
+
+    .rev-card:hover {
+      transform: rotate(-.8deg) translateY(-4px);
+      box-shadow: 4px 10px 32px rgba(0, 0, 0, .55)
+    }
+
+    .rev-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px 10px
+    }
+
+    /* CLIP PATH 9 — reviewer avatar: tilted square */
+    .rev-av-clip {
+      width: 50px;
+      height: 50px;
+      flex-shrink: 0;
+      overflow: hidden;
+      clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%)
+    }
+
+    .rev-av-clip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(.8) saturate(.7);
+      transition: filter .3s, transform .4s
+    }
+
+    .rev-card:hover .rev-av-clip img {
+      filter: brightness(.95) saturate(.9);
+      transform: scale(1.12)
+    }
+
+    .rev-meta h5 {
+      font-family: 'Halant', serif;
+      font-size: var(--txl);
+      color: #fff;
+      margin-bottom: 2px
+    }
+
+    .rev-meta .rl {
+      font-size: var(--tbs);
+      color: #999
+    }
+
+    .rev-stars {
+      color: #FFD700;
+      font-size: 14px;
+      margin-left: auto
+    }
+
+    .rev-body {
+      padding: 0 16px 14px
+    }
+
+    .rev-imgs {
+      display: flex;
+      gap: 6px;
+      padding: 0 16px 14px
+    }
+
+    /* CLIP PATH 9b — review proof images: leaf shape */
+    .rv-clip {
+      flex: 1;
+      overflow: hidden;
+      clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)
+    }
+
+    .rv-clip img {
+      width: 100%;
+      height: 70px;
+      object-fit: cover;
+      filter: brightness(.65) saturate(.55);
+      transition: filter .3s, transform .4s
+    }
+
+    .rev-card:hover .rv-clip img {
+      filter: brightness(.85) saturate(.8);
+      transform: scale(1.12)
+    }
+
+    /* ===========================
+   SECTION 10 — TRUST
+   Clip-path: convex arc both sides
+   =========================== */
+    .trust-sec {
+      background: var(--RD);
+      padding: 60px 20px 40px;
+      text-align: center;
+      clip-path: polygon(0 3%, 50% 0, 100% 3%, 100% 97%, 50% 100%, 0 97%);
+      margin-top: -20px;
+    }
+
+    .trust-m {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: rgba(255, 255, 255, .1);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 24px 0
+    }
+
+    .tm {
+      background: rgba(0, 0, 0, .4);
+      padding: 22px 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: background .3s, transform .3s;
+      position: relative
+    }
+
+    .tm:hover {
+      background: rgba(176, 0, 0, .4);
+      transform: scale(1.07);
+      z-index: 1
+    }
+
+    .tm strong {
+      font-family: 'Halant', serif;
+      font-size: 28px;
+      display: block;
+      color: #fff
+    }
+
+    .tm span {
+      font-size: var(--tbs);
+      color: #ffb3b3
+    }
+
+    .trust-imgs {
+      display: flex;
+      gap: 8px;
+      margin-top: 20px
+    }
+
+    /* CLIP PATH 10 — trust images: banner/ribbon shape */
+    .ti-clip {
+      flex: 1;
+      overflow: hidden;
+      clip-path: polygon(5% 0, 95% 0, 100% 50%, 95% 100%, 5% 100%, 0 50%)
+    }
+
+    .ti-clip img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      /* filter: brightness(.6) saturate(.4); */
+      transition: filter .3s, transform .4s;
+      cursor: pointer;
+      display: block
+    }
+
+    .ti-clip img:hover {
+      /* filter: brightness(.85) saturate(.7); */
+      transform: scale(1.08)
+    }
+
+    /* ===========================
+   SECTION 11 — OFFER
+   Clip-path: scalloped bottom
+   =========================== */
+    .offer-sec {
+      background: var(--B);
+      padding: 60px 20px 40px;
+      margin-top: -20px
+    }
+
+    .offer-hdr {
+      background: var(--R);
+      border-radius: 10px 10px 0 0;
+      padding: 18px 20px;
+      text-align: center
+    }
+
+    .offer-hdr h2 {
+      margin-bottom: 4px
+    }
+
+    .offer-body {
+      background: var(--BS);
+      border-radius: 0 0 10px 10px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-top: none;
+      margin-bottom: 20px
+    }
+
+    .offer-perks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 22px
+    }
+
+    .op {
+      background: rgba(139, 0, 0, .18);
+      border: 1px solid rgba(139, 0, 0, .4);
+      border-radius: 10px;
+      padding: 16px 12px;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .3s, background .3s
+    }
+
+    .op::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40px;
+      height: 200%;
+      background: rgba(255, 255, 255, .1);
+      transform: skewX(-20deg);
+      transition: left .5s ease
+    }
+
+    .op:hover::before {
+      left: 130%
+    }
+
+    .op:hover {
+      border-color: var(--R);
+      background: rgba(176, 0, 0, .3)
+    }
+
+    .op .pi {
+      font-size: 26px;
+      display: block;
+      margin-bottom: 7px
+    }
+
+    .op h4 {
+      color: #ffcccc;
+      margin-bottom: 4px
+    }
+
+    .countdown {
+      background: var(--B);
+      border-radius: 8px;
+      padding: 14px;
+      text-align: center;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 0, 0, .2)
+    }
+
+    .countdown>p {
+      font-size: var(--tbs);
+      color: #ff9999 !important;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase
+    }
+
+    .cdb {
+      display: flex;
+      gap: 8px;
+      justify-content: center
+    }
+
+    .cdbox {
+      background: var(--R);
+      border-radius: 6px;
+      padding: 8px 12px;
+      min-width: 54px;
+      text-align: center
+    }
+
+    .cdbox strong {
+      font-family: 'Halant', serif;
+      font-size: 24px;
+      display: block
+    }
+
+    .cdbox span {
+      font-size: var(--txs);
+      opacity: .85;
+      text-transform: uppercase;
+      letter-spacing: 1px
+    }
+
+    .cdsep {
+      font-size: 22px;
+      color: #fff;
+      align-self: center
+    }
+
+    /* ===========================
+   SECTION 12 — ORDER FORM
+   =========================== */
+    .order-sec {
+      background: var(--BS);
+      padding: 50px 20px 40px;
+      margin-top: -20px
+    }
+
+    .ofw {
+      background: var(--B);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .07)
+    }
+
+    .ofh {
+      background: var(--R);
+      padding: 18px 20px;
+      text-align: center
+    }
+
+    .ofh h2 {
+      margin-bottom: 4px
+    }
+
+    .fb {
+      padding: 22px
+    }
+
+    .fg {
+      margin-bottom: 16px
+    }
+
+    .fg label {
+      display: block;
+      font-size: var(--tbs);
+      color: #bbb;
+      margin-bottom: 6px
+    }
+
+    .fg input,
+    .fg select {
+      width: 100%;
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-size: var(--tbs);
+      color: #fff;
+      font-family: 'Hind', sans-serif;
+      outline: none;
+      transition: border-color .2s
+    }
+
+    .fg input:focus,
+    .fg select:focus {
+      border-color: var(--R)
+    }
+
+    .fg select option {
+      background: #222;
+      color: #fff
+    }
+
+    .sub-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--R);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Halant', serif;
+      font-size: 24px;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 1px;
+      box-shadow: 0 6px 20px rgba(139, 0, 0, .5);
+      transition: background .2s, transform .2s
+    }
+
+    .sub-btn:hover {
+      background: #c00;
+      transform: translateY(-2px)
+    }
+
+    .ft {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 14px
+    }
+
+    .ft span {
+      font-size: var(--tbs);
+      color: #999;
+      display: flex;
+      align-items: center;
+      gap: 4px
+    }
+
+    @keyframes formPulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .75
+      }
+    }
+
+    .form-pulse {
+      animation: formPulse 1.5s ease-in-out infinite
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255, 255, 255, .3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+      margin: 0 auto 12px
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    /* ===========================
+   SECTION 13 — FAQ
+   =========================== */
+    .faq-sec {
+      background: var(--B);
+      padding: 50px 20px 40px
+    }
+
+    .fi-item {
+      border-bottom: 1px solid rgba(255, 255, 255, .07);
+      margin-bottom: 2px
+    }
+
+    .fq {
+      padding: 16px 0;
+      font-family: 'Halant', serif;
+      font-size: var(--txl);
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      transition: color .2s
+    }
+
+    .fq:hover {
+      color: #ffb3b3
+    }
+
+    .fq::after {
+      content: '+';
+      color: var(--R);
+      font-size: 24px;
+      font-family: 'Hind', sans-serif;
+      flex-shrink: 0;
+      transition: transform .25s;
+      margin-top: -2px
+    }
+
+    .fi-item.open .fq::after {
+      transform: rotate(45deg)
+    }
+
+    .fa {
+      display: none;
+      padding: 0 0 16px
+    }
+
+    .fi-item.open .fa {
+      display: block
+    }
+
+    /* ===========================
+   SECTION 14 — DISCLAIMER
+   =========================== */
+    .disc-sec {
+      background: var(--BS);
+      padding: 30px 20px;
+      border-top: 1px solid rgba(255, 0, 0, .12)
+    }
+
+    .disc-box {
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .07);
+      border-radius: 8px;
+      padding: 16px
+    }
+
+    .disc-box h4 {
+      font-family: 'Halant', serif;
+      font-size: 8px;
+      color: #545353;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .disc-box p {
+      font-size: 8px;
+      color: #656464 !important;
+      line-height: 1.8
+    }
+
+    /* ===========================
+   SCROLL-TRIGGERED CTA
+   =========================== */
+    #scroll-cta {
+      position: fixed;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 450px;
+      background: var(--R);
+      padding: 12px 20px;
+      z-index: 100;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, .6);
+      transition: bottom .4s cubic-bezier(.34, 1.56, .64, 1);
+    }
+
+    #scroll-cta.show {
+      bottom: 0
+    }
+
+    #scroll-cta a {
+      display: block;
+      text-align: center;
+      color: #fff;
+      font-family: 'Halant', serif;
+      font-size: var(--txl);
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 1px
+    }
+
+    #scroll-cta small {
+      display: block;
+      font-size: 14px;
+      opacity: .85;
+      font-family: 'Hind', sans-serif
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pw" id="top">
+
+    <!-- ===== 1. HOOK ===== -->
+    <section class="hook">
+      <div class="htb">
+        <span>⚠️ सावधान — जरूरी जानकारी</span>
+        <div class="dot-live"></div>
+      </div>
+      <div class="img-wrap" style="width:100%;position:relative">
+        <img src="./Image/product.png" alt="Product" class="h-prod-img">
+        <div class="h-overlay"></div>
+      </div>
+      <div class="hcont">
+        <span class="hbadge">🌿 आयुर्वेदिक केयर फॉर्मूला</span>
+        <h1>Alopecia Areata<span>तंबाकू से बीमारी? अब प्राकृतिक सहायता लें</span></h1>
+        <p class="hook-desc" style="margin-bottom:20px">अगर आप लंबे समय से तंबाकू, गुटखा, पान मसाला, बीड़ी या सिगरेट का
+          सेवन कर रहे हैं — तो इसका असर आपके शरीर के कई महत्वपूर्ण अंगों पर पड़ रहा है।</p>
+        <div class="hrisk">
+          <p>⚠️ <strong>भारत में लगभग 40–45% कैंसर</strong> तंबाकू के सेवन से जुड़े होते हैं।</p>
+        </div>
+        <div class="horgans">
+          <div class="oitem"><span class="oe">👄</span>मुंह</div>
+          <div class="oitem"><span class="oe">👅</span>जीभ</div>
+          <div class="oitem"><span class="oe">🗣️</span>गला</div>
+          <div class="oitem"><span class="oe">🍽️</span>भोजन नली</div>
+          <div class="oitem"><span class="oe">🫁</span>फेफड़े</div>
+        </div>
+        <div class="hstat"><strong>40–45%</strong><span>कैंसर केस तंबाकू से जुड़े हैं — भारत में</span></div>
+        <a href="#order" class="cta-m">👉 अभी आयुर्वेदिक सहायता लें</a>
+      </div>
+    </section>
+
+    <!-- ===== 2. SIGNS ===== -->
+    <section class="signs-sec fi">
+      <span class="sl">⚠️ चेतावनी</span>
+      <h2 class="st">🚨 इन संकेतों को बिल्कुल नजरअंदाज न करें</h2>
+      <p style="color:rgba(255,255,255,.8)!important;margin-bottom:28px">अगर आपको इनमें से कोई भी लक्षण महसूस हो, तो
+        तुरंत ध्यान दें:</p>
+
+      <div class="sign-card">
+        <div class="img-wrap sign-img-clip"><img
+            src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=450&q=70" alt="मुंह में घाव"></div>
+        <div class="sign-txt">
+          <div class="sign-icon">❗</div>
+          <div class="sign-ttl">मुंह में बार-बार घाव होना</div>
+          <p>तंबाकू के कारण मुंह की कोशिकाओं को नुकसान होता है जिससे बार-बार घाव हो सकते हैं।</p>
+        </div>
+      </div>
+      <div class="sign-card">
+        <div class="img-wrap sign-img-clip"><img
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=450&q=70" alt="गले में दर्द"></div>
+        <div class="sign-txt">
+          <div class="sign-icon">❗</div>
+          <div class="sign-ttl">गले में दर्द या जलन रहना</div>
+          <p>निरंतर जलन और दर्द गंभीर समस्या का संकेत हो सकता है।</p>
+        </div>
+      </div>
+      <div class="sign-card">
+        <div class="img-wrap sign-img-clip"><img
+            src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=450&q=70" alt="निगलने में परेशानी">
+        </div>
+        <div class="sign-txt">
+          <div class="sign-icon">❗</div>
+          <div class="sign-ttl">निगलने में परेशानी होना</div>
+          <p>भोजन निगलने में कठिनाई Esophageal Cancer का संकेत हो सकती है।</p>
+        </div>
+      </div>
+      <div class="sign-card">
+        <div class="img-wrap sign-img-clip"><img
+            src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=450&q=70" alt="मुंह में गांठ"></div>
+        <div class="sign-txt">
+          <div class="sign-icon">❗</div>
+          <div class="sign-ttl">मुंह या गले में गांठ महसूस होना</div>
+          <p>किसी भी असामान्य गांठ को हल्के में न लें, यह खतरनाक हो सकता है।</p>
+        </div>
+      </div>
+      <div class="sign-card">
+        <div class="img-wrap sign-img-clip"><img
+            src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=450&q=70" alt="आवाज में बदलाव"></div>
+        <div class="sign-txt">
+          <div class="sign-icon">❗</div>
+          <div class="sign-ttl">आवाज में अचानक बदलाव आना</div>
+          <p>अचानक कर्कश आवाज Throat Cancer का लक्षण हो सकता है।</p>
+        </div>
+      </div>
+      <div class="sign-card">
+        <div class="img-wrap sign-img-clip"><img
+            src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=450&q=70" alt="कमजोरी"></div>
+        <div class="sign-txt">
+          <div class="sign-icon">❗</div>
+          <div class="sign-ttl">शरीर में लगातार कमजोरी</div>
+          <p>अंदरूनी नुकसान के कारण शरीर लगातार कमज़ोर पड़ सकता है।</p>
+        </div>
+      </div>
+      <a href="#order" class="cta-m" style="margin-top:12px">🌿 अभी सहायता लें</a>
+    </section>
+
+    <!-- ===== 3. SUPPORT ===== -->
+    <section class="support-sec fi">
+      <span class="sl">🌿 प्राकृतिक समाधान</span>
+      <h2 class="st">अब शरीर को दें प्राकृतिक आयुर्वेदिक सहायता</h2>
+      <p style="margin-bottom:16px">हमारा Alopecia Areata Ayurvedic Care Formula शरीर की प्राकृतिक healing process को
+        support करता है।</p>
+      <div class="sup-hero-wrap img-wrap">
+        <img src="./Image/product.png" alt="Product">
+      </div>
+      <div class="sup-pts">
+        <div class="sup-pt">
+          <div class="img-wrap sp-clip"><img
+              src="https://images.unsplash.com/photo-1596910547773-5e9f9ce0ac0d?w=300&q=70" alt="तंबाकू"></div>
+          <div class="sp-txt">
+            <p>✔ लंबे समय से तंबाकू का सेवन करने वालों के लिए</p>
+          </div>
+        </div>
+        <div class="sup-pt">
+          <div class="img-wrap sp-clip"><img
+              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=300&q=70" alt="मुंह गला"></div>
+          <div class="sp-txt">
+            <p>✔ मुंह या गले की समस्याओं से परेशान लोगों के लिए</p>
+          </div>
+        </div>
+        <div class="sup-pt">
+          <div class="img-wrap sp-clip"><img
+              src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?w=300&q=70" alt="Detox"></div>
+          <div class="sp-txt">
+            <p>✔ शरीर को अंदर से Detox करना चाहते हैं</p>
+          </div>
+        </div>
+        <div class="sup-pt">
+          <div class="img-wrap sp-clip"><img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=300&q=70"
+              alt="आयुर्वेद"></div>
+          <div class="sp-txt">
+            <p>✔ प्राकृतिक आयुर्वेदिक support चाहते हैं</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. BENEFITS ===== -->
+    <section class="benefits-sec fi">
+      <span class="sl">✅ फायदे</span>
+      <h2 class="st">🌿 संभावित लाभ</h2>
+      <p style="margin-bottom:6px">इस आयुर्वेदिक फॉर्मूला का उद्देश्य है आपके शरीर को अंदर से सशक्त बनाना।</p>
+      <div class="bn-list">
+        <div class="bn-node">
+          <div class="img-wrap bn-clip"><img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=450&q=70"
+              alt="Immunity"></div>
+          <div class="bn-txt">
+            <h4>✅ Immunity को मजबूत बनाना</h4>
+            <p>शरीर की रोग-प्रतिरोधक क्षमता को बेहतर करके अंदरूनी सुरक्षा बनाता है।</p>
+          </div>
+        </div>
+        <div class="bn-node">
+          <div class="img-wrap bn-clip"><img
+              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=450&q=70" alt="Cell Repair"></div>
+          <div class="bn-txt">
+            <h4>✅ Cells की Repair Process को Support</h4>
+            <p>क्षतिग्रस्त कोशिकाओं की मरम्मत में सहायक जड़ी-बूटियों का समावेश।</p>
+          </div>
+        </div>
+        <div class="bn-node">
+          <div class="img-wrap bn-clip"><img
+              src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?w=450&q=70" alt="Detox"></div>
+          <div class="bn-txt">
+            <h4>✅ शरीर से Toxins बाहर निकालना</h4>
+            <p>हानिकारक तत्वों को शरीर से बाहर निकालने में मदद करता है।</p>
+          </div>
+        </div>
+        <div class="bn-node">
+          <div class="img-wrap bn-clip"><img
+              src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=450&q=70" alt="Recovery"></div>
+          <div class="bn-txt">
+            <h4>✅ Overall Health Recovery को Support</h4>
+            <p>संपूर्ण स्वास्थ्य सुधार में सहायक, शरीर को फिर से शक्ति देता है।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. HERBS ===== -->
+    <section class="herbs-sec fi">
+      <span class="sl">🌱 सामग्री</span>
+      <h2 class="st">शक्तिशाली आयुर्वेदिक जड़ी-बूटियों से बना</h2>
+      <p style="margin-bottom:6px">प्रकृति की सबसे शक्तिशाली जड़ी-बूटियों का वैज्ञानिक समावेश।</p>
+      <div class="herbs-grid">
+        <div class="herb-cell">
+          <div class="img-wrap hc-clip">
+            <div class="herb-num">1</div><img
+              src="./Image/Ind1.png" alt="अश्वगंधा">
+          </div>
+          <div class="herb-info">
+            <h4>🌿 अश्वगंधा</h4>
+            <p>तनाव कम करे, ऊर्जा बढ़ाए और immunity को मजबूत करे।</p>
+          </div>
+        </div>
+        <div class="herb-cell">
+          <div class="img-wrap hc-clip">
+            <div class="herb-num">2</div><img src="./Image/Ind2.png" alt="गिलोय">
+              alt="गिलोय">
+          </div>
+          <div class="herb-info">
+            <h4>🌿 गिलोय</h4>
+            <p>रोग-प्रतिरोधक शक्ति बढ़ाए और शरीर को detox करे।</p>
+          </div>
+        </div>
+        <div class="herb-cell">
+          <div class="img-wrap hc-clip">
+            <div class="herb-num">3</div><img
+              src="./Image/Ind3.png" alt="हल्दी">
+          </div>
+          <div class="herb-info">
+            <h4>🌿 हल्दी</h4>
+            <p>Anti-inflammatory गुणों से भरपूर, कोशिकाओं की रक्षा करे।</p>
+          </div>
+        </div>
+        <div class="herb-cell">
+          <div class="img-wrap hc-clip">
+            <div class="herb-num">4</div><img
+              src="./Image/Ind4.png" alt="तुलसी">
+          </div>
+          <div class="herb-info">
+            <h4>🌿 तुलसी</h4>
+            <p>शरीर को शुद्ध करे और श्वसन तंत्र को स्वस्थ रखे।</p>
+          </div>
+        </div>
+        <!-- <div class="herb-cell">
+          <div class="img-wrap hc-clip">
+            <div class="herb-num">5</div><img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=300&q=70"
+              alt="अन्य">
+          </div>
+          <div class="herb-info">
+            <h4>🌿 अन्य आयुर्वेदिक तत्व</h4>
+            <p>पारंपरिक आयुर्वेद की अन्य शक्तिशाली जड़ी-बूटियाँ।</p>
+          </div>
+        </div> -->
+      </div>
+      <div class="cert-strip">
+        <div class="cert-b"><span class="ci"><img style="width:94px;height:94px;border-radius: 50%;" src="./Image/Trust1.png" alt=""></span>100% Herbal</div>
+        <div class="cert-b"><span class="ci"><img style="width:94px;height:94px;border-radius: 50%;" src="./Image/Trust2.png" alt=""></span>GMP Certified</div>
+        <div class="cert-b"><span class="ci"><img style="width:94px;height:94px;border-radius: 50%;" src="./Image/Trust3.png" alt=""></span>Quality Tested</div>
+      </div>
+    </section>
+
+    <!-- ===== 6. BEFORE / AFTER ===== -->
+    <section class="ba-sec fi">
+      <span class="sl">🔴 परिणाम</span>
+      <h2 class="st">पहले और अब — Before / After</h2>
+      <p>देखें कैसे शरीर में आता है बदलाव:</p>
+      <div class="ba-vis">
+        <div class="ba-half ba-before"><img src="./Image/before.png"
+            alt="Before"></div>
+        <div class="ba-half ba-after"><img src="./Image/after.png"
+            alt="After"></div>
+        <div class="ba-div"></div>
+        <div class="ba-lbl before">पहले</div>
+        <div class="ba-lbl after">अब</div>
+      </div>
+      <div class="ba-cards">
+        <div class="ba-card bc">
+          <div class="ba-ch">❌ पहले</div>
+          <div class="ba-cb">
+            <div class="ba-pt">
+              <div class="bpc img-wrap"><img
+                  src="./Image/before2.png" alt="घाव"></div>
+              <div class="ba-ptext">मुंह में बार-बार घाव होना</div>
+            </div>
+            <div class="ba-pt">
+              <div class="bpc img-wrap"><img
+                  src="./Image/before1.png" alt="जलन"></div>
+              <div class="ba-ptext">गले में जलन और दर्द</div>
+            </div>
+            <div class="ba-pt">
+              <div class="bpc img-wrap"><img
+                  src="./Image/before4.png" alt="खाना"></div>
+              <div class="ba-ptext">खाना निगलने में तकलीफ</div>
+            </div>
+            <div class="ba-pt">
+              <div class="bpc img-wrap"><img src="./Image/before3.png"
+                  alt="कमजोरी"></div>
+              <div class="ba-ptext">शरीर में लगातार कमजोरी</div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-card ac">
+          <div class="ba-ch">✔ अब</div>
+          <div class="ba-cb">
+            <div class="ba-pt">
+              <div class="bpc img-wrap"><img
+                  src="./Image/after1.png" alt="immunity"></div>
+              <div class="ba-ptext">Immunity को support</div>
+            </div>
+            <div class="ba-pt">
+              <div class="bpc img-wrap"><img src="./Image/after2.png"
+                  alt="देखभाल"></div>
+              <div class="ba-ptext">मुंह-गले की देखभाल</div>
+            </div>
+            <div class="ba-pt">
+              <div class="bpc img-wrap"><img
+                  src="./Image/after3.png" alt="healing"></div>
+              <div class="ba-ptext">Natural Healing support</div>
+            </div>
+            <div class="ba-pt">
+              <div class="bpc img-wrap"><img
+                  src="./Image/after4.png" alt="recovery"></div>
+              <div class="ba-ptext">Overall health recovery</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 7. EXPERT ===== -->
+    <section class="expert-sec fi">
+      <span class="sl">👨‍⚕️ विशेषज्ञ राय</span>
+      <h2 class="st">आयुर्वेद विशेषज्ञों की राय</h2>
+      <div class="exp-hero">
+        <div class="exp-av-clip img-wrap"><img
+            src="./Image/doctor.png" alt="Expert"></div>
+        <div class="exp-meta">
+          <h4>डॉ. रामेश्वर शर्मा</h4><span>🌿 वरिष्ठ आयुर्वेद विशेषज्ञ — 20+ वर्ष अनुभव</span>
+        </div>
+      </div>
+      <p class="exp-quote"
+        style="font-style:italic;border-left:3px solid rgba(255,255,255,.3);padding-left:14px;margin-bottom:20px">"जब
+        शरीर को सही जड़ी-बूटियों और पोषण का सहारा मिलता है, तो शरीर की प्राकृतिक healing क्षमता बेहतर काम करती है।"</p>
+      <p style="margin-bottom:20px">इस Ayurvedic Care Formula को पारंपरिक जड़ी-बूटियों के आधार पर तैयार किया गया है जो
+        शरीर की overall health को support करता है।</p>
+      <div class="exp-imgs">
+        <div class="exp-img-clip img-wrap"><img
+            src="./Image/doctor1.png" alt="Ayurveda"></div>
+        <div class="exp-img-clip img-wrap"><img
+            src="./Image/doctor2.png" alt="Herbs"></div>
+        <div class="exp-img-clip img-wrap"><img
+            src="./Image/doctor3.png" alt="Natural"></div>
+      </div>
+    </section>
+
+    <!-- ===== 8. STORY ===== -->
+    <section class="story-sec fi">
+      <span class="sl">💔 सच्ची कहानी</span>
+      <h2 class="st">एक सच्ची कहानी</h2>
+      <div class="story-person">
+        <div class="sp-img-clip img-wrap">
+          <img src="./Image/Story1.png" alt="रामलाल">
+        </div>
+        <div class="sp-overlay">
+          <div class="sp-name">रामलाल (नाम बदला हुआ)</div>
+          <div class="sp-age">उम्र: 48 वर्ष • दिल्ली</div>
+        </div>
+      </div>
+      <p style="margin-bottom:18px;margin-top: 50px;">रामलाल पिछले <strong>20 साल से गुटखा और बीड़ी</strong> का सेवन कर रहे थे। शुरुआत में
+        उन्हें मुंह में हल्का घाव हुआ — जिसे उन्होंने नजरअंदाज किया।</p>
+      <div class="story-tl">
+        <div class="s-step">
+          <div class="ss-clip img-wrap"><img src="./Image/Story4.png"
+              alt="Step 1"></div>
+          <div class="ss-info">
+            <h5>पहला संकेत — मुंह में घाव</h5>
+            <p>छोटे-छोटे घाव जो ठीक नहीं हो रहे थे — उन्हें लगा यह साधारण है।</p>
+          </div>
+        </div>
+        <div class="s-step">
+          <div class="ss-clip img-wrap"><img
+              src="./Image/Story3.png" alt="Step 2"></div>
+          <div class="ss-info">
+            <h5>दूसरा चरण — गले में दर्द, खाने में तकलीफ</h5>
+            <p>धीरे-धीरे गले में दर्द बढ़ा और खाना निगलना मुश्किल हो गया।</p>
+          </div>
+        </div>
+        <div class="s-step">
+          <div class="ss-clip img-wrap"><img src="./Image/Story2.png"
+              alt="Step 3"></div>
+          <div class="ss-info">
+            <h5>जागरूकता और जीवन बदलाव</h5>
+            <p>डॉक्टर से मिलने के बाद उन्होंने lifestyle बदली और आयुर्वेदिक support लेना शुरू किया।</p>
+          </div>
+        </div>
+      </div>
+      <div class="s-qbox">
+        <p>"तंबाकू को हल्के में मत लो — यह धीरे-धीरे शरीर को अंदर से खत्म कर सकता है।"</p>
+      </div>
+    </section>
+
+    <!-- ===== 10. TRUST ===== -->
+    <section class="trust-sec fi">
+      <span class="sl">🏥 भरोसा</span>
+      <h2 class="st">भरोसेमंद और प्रमाणित</h2>
+      <p>हजारों लोग इस आयुर्वेदिक फॉर्मूला पर भरोसा कर रहे हैं।</p>
+      <div class="trust-m">
+        <div class="tm"><strong>80,000+</strong><span>संतुष्ट ग्राहक</span></div>
+        <div class="tm"><strong>4.8★</strong><span>Average Rating</span></div>
+        <div class="tm"><strong>100%</strong><span>Herbal Formula</span></div>
+      </div>
+      <div class="cert-strip">
+        <div class="cert-b" style="background:rgba(0,0,0,.3)"><span class="ci">✅</span>Ayurvedic Formula</div>
+        <div class="cert-b" style="background:rgba(0,0,0,.3)"><span class="ci">🏭</span>GMP Certified</div>
+        <div class="cert-b" style="background:rgba(0,0,0,.3)"><span class="ci">🔬</span>Quality Tested</div>
+      </div>
+      <div class="trust-imgs">
+        <div class="ti-clip img-wrap"><img src="./Image/Trust1.png"
+            alt=""></div>
+        <div class="ti-clip img-wrap"><img src="./Image/Trust2.png"
+            alt=""></div>
+        <div class="ti-clip img-wrap"><img src="./Image/Trust3.png"
+            alt=""></div>
+      </div>
+    </section>
+
+    <!-- ===== 11. OFFER ===== -->
+    <section class="offer-sec fi">
+      <div class="offer-hdr">
+        <h2>🎁 Limited Time Offer</h2>
+        <p>आज ऑर्डर करने पर विशेष छूट और मुफ्त उपहार</p>
+      </div>
+      <div class="offer-body">
+        <div class="offer-perks">
+          <div class="op"><span class="pi">🚚</span>
+            <h4>Free Delivery</h4>
+            <p>पूरे भारत में मुफ्त डिलीवरी</p>
+          </div>
+          <div class="op"><span class="pi">📋</span>
+            <h4>Free Diet Chart</h4>
+            <p>मुफ्त आयुर्वेदिक Diet Chart</p>
+          </div>
+          <div class="op"><span class="pi">💵</span>
+            <h4>Cash On Delivery</h4>
+            <p>पहले उत्पाद देखें, फिर पैसे दें</p>
+          </div>
+          <div class="op"><span class="pi">🏷️</span>
+            <h4>10% Discount</h4>
+            <p>आज के ऑर्डर पर 10% की छूट</p>
+          </div>
+        </div>
+        <div class="countdown">
+          <p>⏰ यह ऑफर समाप्त होगा —</p>
+          <div class="cdb">
+            <div class="cdbox"><strong id="cd-h">02</strong><span>घंटे</span></div>
+            <div class="cdsep">:</div>
+            <div class="cdbox"><strong id="cd-m">47</strong><span>मिनट</span></div>
+            <div class="cdsep">:</div>
+            <div class="cdbox"><strong id="cd-s">33</strong><span>सेकंड</span></div>
+          </div>
+        </div>
+        <a href="#order" class="cta-m">👉 अभी ऑर्डर करें — Free Delivery + COD</a>
+      </div>
+    </section>
+
+    <!-- ===== 12. ORDER ===== -->
+    <section class="order-sec fi" id="order">
+      <div class="ofw">
+        <div class="ofh">
+          <h2>👉 अभी ऑर्डर करें</h2>
+          <p>🚚 Free Delivery | 💵 COD Available | 🏷️ 10% Discount</p>
+        </div>
+        <div class="fb">
+          <form onsubmit="return submitForm(event)">
+            <div class="fg"><label>आपका पूरा नाम</label><input type="text" name="name" placeholder="Enter Your Name"
+                required></div>
+            <div class="fg"><label>मोबाइल नंबर</label><input type="tel" name="phone" placeholder="10 Digit Phone Number"
+                maxlength="10" pattern="[6-9][0-9]{9}" required></div>
+            <input type="submit" value="🛒 अभी ऑर्डर करें — FREE डिलीवरी पाएं" class="sub-btn">
+            <div id="loading" style="display:none;text-align:center;padding:20px 0">
+              <div class="loading-spinner"></div>
+              <p style="font-size:var(--tbs)">आपका Order Process हो रहा है<span id="dotAnim">...</span></p>
+              <p style="font-size:var(--txs);opacity:.7">कृपया प्रतीक्षा करें</p>
+            </div>
+          </form>
+          <div class="ft">
+            <span>🔒 100% सुरक्षित</span>
+            <span>🚚 Free Delivery</span>
+            <span>💵 COD</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <!-- ===== 9. REVIEWS ===== -->
+    <section class="reviews-sec fi">
+      <span class="sl">⭐ अनुभव</span>
+      <h2 class="st">लोगों के अनुभव</h2>
+      <div class="rev-avg">
+        <div class="br">4.8</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <p style="font-size:var(--tbs)!important">हजारों संतुष्ट उपयोगकर्ता</p><small
+            style="font-size:var(--tsm);color:#999">Verified Reviews</small>
+        </div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-top">
+          <div class="rev-av-clip img-wrap"><img
+              src="./Image/Client1.png" alt="Rajesh"></div>
+          <div class="rev-meta">
+            <h5>राजेश कुमार</h5>
+            <div class="rl">📍 दिल्ली</div>
+          </div>
+          <div class="rev-stars">★★★★★</div>
+        </div>
+        <div class="rev-body">
+          <p>मुझे लंबे समय से मुंह में जलन और घाव की समस्या रहती थी। इस आयुर्वेदिक फॉर्मूला का उपयोग करने के बाद काफी
+            बेहतर महसूस हुआ।</p>
+        </div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-top">
+          <div class="rev-av-clip img-wrap"><img
+              src="./Image/Client2.png" alt="Suresh"></div>
+          <div class="rev-meta">
+            <h5>सुरेश पटेल</h5>
+            <div class="rl">📍 गुजरात</div>
+          </div>
+          <div class="rev-stars">★★★★★</div>
+        </div>
+        <div class="rev-body">
+          <p>तंबाकू के कारण गले में परेशानी थी। कुछ समय उपयोग करने के बाद पहले से बेहतर महसूस हुआ।</p>
+        </div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-top">
+          <div class="rev-av-clip img-wrap"><img
+              src="./Image/Client3.png" alt="Priya"></div>
+          <div class="rev-meta">
+            <h5>प्रिया वर्मा</h5>
+            <div class="rl">📍 मुंबई</div>
+          </div>
+          <div class="rev-stars">★★★★☆</div>
+        </div>
+        <div class="rev-body">
+          <p>मेरे पति के लिए लिया था। तंबाकू छोड़ने के बाद शरीर को support देने के लिए यह बहुत उपयोगी रहा। Free delivery
+            भी मिली।</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 13. FAQ ===== -->
+    <section class="faq-sec fi">
+      <span class="sl">❓ सवाल-जवाब</span>
+      <h2 class="st">अक्सर पूछे जाने वाले सवाल</h2>
+      <div class="fi-item open">
+        <div class="fq" onclick="tFAQ(this)">यह उत्पाद किन लोगों के लिए उपयुक्त है?</div>
+        <div class="fa">यह उत्पाद खासतौर पर उन लोगों के लिए है जो लंबे समय से तंबाकू, गुटखा, पान मसाला, बीड़ी या सिगरेट
+          का सेवन कर रहे हैं।</div>
+      </div>
+      <div class="fi-item">
+        <div class="fq" onclick="tFAQ(this)">कितने समय में असर दिखेगा?</div>
+        <div class="fa">परिणाम व्यक्ति की शारीरिक स्थिति पर निर्भर करते हैं। आमतौर पर नियमित उपयोग से कुछ सप्ताह में
+          सुधार महसूस होने लगता है।</div>
+      </div>
+      <div class="fi-item">
+        <div class="fq" onclick="tFAQ(this)">क्या COD (Cash on Delivery) उपलब्ध है?</div>
+        <div class="fa">हाँ! हम Cash on Delivery की सुविधा देते हैं। पहले उत्पाद अपने दरवाजे पर प्राप्त करें, फिर पैसे
+          दें।</div>
+      </div>
+      <div class="fi-item">
+        <div class="fq" onclick="tFAQ(this)">डिलीवरी कितने दिनों में होगी?</div>
+        <div class="fa">ऑर्डर कन्फर्म होने के बाद 5–7 कार्य दिवसों में आपके पते पर डिलीवरी। डिलीवरी बिल्कुल मुफ्त है।
+        </div>
+      </div>
+      <div class="fi-item">
+        <div class="fq" onclick="tFAQ(this)">क्या इसके कोई साइड इफेक्ट हैं?</div>
+        <div class="fa">यह 100% हर्बल और आयुर्वेदिक फॉर्मूला है। GMP Certified Manufacturing में तैयार। किसी भी एलर्जी
+          की स्थिति में डॉक्टर से परामर्श लें।</div>
+      </div>
+    </section>
+
+    <!-- ===== 14. DISCLAIMER ===== -->
+    <section class="disc-sec">
+      <div class="disc-box">
+        <h4>⚠️ Disclaimer — महत्वपूर्ण सूचना</h4>
+        <p>यह उत्पाद किसी भी बीमारी के निदान, उपचार, इलाज या रोकथाम का दावा नहीं करता। यह केवल आयुर्वेदिक स्वास्थ्य
+          सहायता के रूप में उपयोग किया जाता है। किसी भी गंभीर स्वास्थ्य समस्या में योग्य चिकित्सक की सलाह अवश्य लें।
+          परिणाम व्यक्ति से व्यक्ति भिन्न हो सकते हैं।</p>
+      </div>
+    </section>
+
+    <div style="height:80px"></div>
+
+    <!-- ===== SCROLL-TRIGGERED CTA ===== -->
+    <div id="scroll-cta">
+      <a href="#order">
+        👉 अभी ऑर्डर करें — Free Delivery + COD
+        <small>🏷️ 10% Discount | 📋 Free Diet Chart | सीमित स्टॉक</small>
+      </a>
+    </div>
+
+  </div><!-- .pw -->
+
+  <script>
+    /* ===== FAQ TOGGLE ===== */
+    function tFAQ(el) { el.parentElement.classList.toggle('open') }
+
+    /* ===== COUNTDOWN ===== */
+    (function () {
+      let t = 2 * 3600 + 47 * 60 + 33;
+      const h = document.getElementById('cd-h'), m = document.getElementById('cd-m'), s = document.getElementById('cd-s');
+      setInterval(() => {
+        if (t <= 0) t = 10800; t--;
+        h.textContent = String(Math.floor(t / 3600)).padStart(2, '0');
+        m.textContent = String(Math.floor((t % 3600) / 60)).padStart(2, '0');
+        s.textContent = String(t % 60).padStart(2, '0');
+      }, 1000);
+    })();
+
+    /* ===== SCROLL FADE-IN ===== */
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis') });
+    }, { threshold: .08 });
+    document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+    /* ===== SCROLL-TRIGGERED CTA ===== */
+    (function () {
+      const cta = document.getElementById('scroll-cta');
+      const hero = document.querySelector('.hook');
+      let shown = false;
+      window.addEventListener('scroll', () => {
+        const heroBot = hero.getBoundingClientRect().bottom;
+        if (heroBot < 0 && !shown) { cta.classList.add('show'); shown = true }
+        else if (heroBot >= 0 && shown) { cta.classList.remove('show'); shown = false }
+      }, { passive: true });
+    })();
+
+    /* ===== ANIMATED DOTS ===== */
+    let dc = 1;
+    setInterval(() => {
+      const d = document.getElementById('dotAnim');
+      if (d) { dc = (dc % 3) + 1; d.textContent = '.'.repeat(dc) }
+    }, 500);
+
+    /* ===== FORM SUBMIT ===== */
+    function submitForm(event) {
+      event.preventDefault();
+      document.getElementById('loading').style.display = 'block';
+      fetch('https://ayurlifeindia.shop/demo.php', { method: 'POST' })
+        .then(r => r.json())
+        .then(data => {
+          if (data.status == 200) {
+            fetch('https://script.google.com/macros/s/AKfycbztilYR0Yc8q9w74-a-p1OF-1QzsDAr6IY4yGmZltpgCSslRk2PtNEe_a1n8ZlA_jHWXw/exec', { method: 'POST', body: new FormData(event.target) })
+              .then(() => {
+                document.getElementById('loading').style.display = 'none';
+                Swal.fire({ icon: 'success', title: 'Success', text: 'Processing Your Order. Please wait....', confirmButtonColor: '#3085d6', confirmButtonText: 'OK' });
+                window.location.href = './ThankYou.html';
+              });
+          }
+          if (data.status == 400) {
+            document.getElementById('loading').style.display = 'none';
+            Swal.fire({ icon: 'error', title: 'Duplicate Order Found! 🚫', text: 'Our system detected a duplicate order. Please try again after 12 hours.', confirmButtonColor: '#d33', confirmButtonText: 'Try After 12 Hours' });
+          }
+        })
+        .catch(() => { window.location.href = './ThankYou.html'; document.getElementById('loading').style.display = 'none' });
+      return false;
+    }
+  </script>
+</body>
+
+</html>
