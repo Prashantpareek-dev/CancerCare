@@ -210,8 +210,37 @@
       height: 300px;
       object-fit: cover;
       display: block;
-      filter: brightness(.82);
-      transition: transform .6s ease
+      /* filter: brightness(.82); */
+      /* transition: transform .6s ease */
+    }
+    .image-hook img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      /* filter: brightness(.82);
+      transition: transform .6s ease */
+    }
+
+    .image-hook::before {
+      content: none !important;
+      animation: none !important;
+      display: none !important;
+    }
+
+    .image-hook:hover::before {
+      animation: none !important;
+    }
+
+    .image-hook .h-prod-img {
+      filter: none !important;
+      transition: none !important;
+      transform: none !important;
+    }
+
+    .image-hook .h-overlay {
+      display: none;
     }
 
     .h-prod-img:hover {
@@ -257,7 +286,78 @@
     .hook h1 span {
       color: #ffcccc;
       display: block;
-      font-size: var(--txl)
+      line-height: 1.4;
+      font-size: var(--t3xl)
+    }
+
+    .hook .hero-title {
+      font-size: 32px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      margin-top: 14px;
+      text-align: center;
+      text-shadow: 0 3px 16px rgba(0, 0, 0, .6);
+    }
+
+    .hook .hero-break {
+      display: block;
+      font-size: 23px;
+      color: #ffe4e4;
+      margin-top: 6px;
+    }
+
+    .hook .hl-main {
+      color: #fff;
+      background: linear-gradient(90deg, rgba(176, 0, 0, .92) 0%, rgba(92, 0, 0, .96) 100%);
+      border: 1px solid rgba(255, 255, 255, .18);
+      padding: 3px 8px;
+      border-radius: 8px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      font-weight: 700;
+      animation: mainPulse 1.8s ease-in-out infinite;
+    }
+
+    .hook .hl-word {
+      color: #fff3f3;
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-color: rgba(255, 204, 204, .65);
+      text-underline-offset: 3px;
+    }
+
+    .hook .keyline {
+      background: linear-gradient(90deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .18) 100%);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-left: 4px solid #ffb3b3;
+      border-radius: 10px;
+      padding: 11px 13px;
+      text-align: left;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .3);
+    }
+
+    .hook .hrisk {
+      background: linear-gradient(90deg, rgba(0, 0, 0, .55) 0%, rgba(92, 0, 0, .45) 100%);
+      border-left: 4px solid #ffd1d1;
+    }
+
+    .hook .hrisk .hl-risk {
+      color: #fff;
+      font-size: 23px;
+      letter-spacing: .3px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, .45);
+    }
+
+    @keyframes mainPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 rgba(176, 0, 0, 0);
+      }
+
+      50% {
+        box-shadow: 0 0 0 6px rgba(176, 0, 0, .16);
+      }
     }
 
     .hrisk {
@@ -271,7 +371,7 @@
 
     .horgans {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 6px;
       margin-bottom: 20px
     }
@@ -282,8 +382,8 @@
       border-radius: 8px;
       padding: 10px 4px;
       text-align: center;
-      font-size: var(--txs);
-      color: #ffcccc;
+      font-size: var(--txl);
+      color: #f6dede;
       line-height: 1.4;
       cursor: pointer;
       transition: background .3s, border-color .3s, box-shadow .3s, transform .3s
@@ -297,7 +397,7 @@
     }
 
     .oitem .oe {
-      font-size: 22px;
+      font-size: 28px;
       display: block;
       margin-bottom: 4px
     }
@@ -352,7 +452,7 @@
     .signs-sec {
       background: var(--B);
       padding: 50px 20px 40px;
-      clip-path: polygon(0 6%, 25% 0, 75% 3%, 100% 0, 100% 100%, 0 100%);
+      /* clip-path: polygon(0 6%, 25% 0, 75% 3%, 100% 0, 100% 100%, 0 100%); */
       margin-top: -30px;
     }
 
@@ -391,7 +491,7 @@
     /* CLIP PATH 2 — signs image: rhombus/parallelogram */
     .sign-img-clip {
       width: 100%;
-      height: 170px;
+      height: 250px;
       overflow: hidden;
       position: relative;
       clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -401,7 +501,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: saturate(.55) brightness(.72);
+      /* filter: saturate(.55) brightness(.72); */
       transition: transform .5s, filter .5s, scale .5s
     }
 
@@ -443,7 +543,7 @@
       border-radius: 12px;
       overflow: hidden;
       margin-bottom: 22px;
-      height: 200px;
+      height: 100%;
       /* CLIP PATH 3 — hero image: trapezoid */
       clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
     }
@@ -485,16 +585,16 @@
     /* CLIP PATH 3b — support points image: hexagonal top */
     .sp-clip {
       width: 100%;
-      height: 100px;
+      height: 150px;
       overflow: hidden;
       clip-path: polygon(8% 0, 92% 0, 100% 50%, 92% 100%, 8% 100%, 0 50%)
     }
 
     .sp-clip img {
       width: 100%;
-      height: 100%;
+      height: 160%;
       object-fit: cover;
-      filter: brightness(.68) saturate(.5);
+      /* filter: brightness(.68) saturate(.5); */
       transition: filter .5s, transform .5s
     }
 
@@ -504,6 +604,7 @@
     }
 
     .sp-txt {
+      font-size: var(--txl);
       padding: 10px 12px 14px
     }
 
@@ -554,19 +655,20 @@
       box-shadow: 0 6px 28px rgba(176, 0, 0, .25)
     }
 
-    /* CLIP PATH 4 — benefit image: wave bottom */
+    /* CLIP PATH 4 — benefit image: angled notch */
     .bn-clip {
       width: 100%;
-      height: 140px;
+      height: 280px;
+      object-fit: top;
       overflow: hidden;
-      clip-path: ellipse(55% 100% at 50% 0%)
+      clip-path: polygon(0 0, 100% 0, 100% 86%, 78% 100%, 22% 100%, 0 86%)
     }
 
     .bn-clip img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(.62) saturate(.55);
+      /* filter: brightness(.62) saturate(.55); */
       transition: transform .5s, filter .5s
     }
 
@@ -1728,30 +1830,34 @@
 <body>
   <div class="pw" id="top">
 
-    <!-- ===== 1. HOOK ===== -->
+       <!-- ===== 1. HOOK ===== -->
     <section class="hook">
       <div class="htb">
         <span>⚠️ सावधान — जरूरी जानकारी</span>
         <div class="dot-live"></div>
       </div>
-      <div class="img-wrap" style="width:100%;position:relative">
-        <img src="./Image/Product.png" alt="Product" class="h-prod-img">
-        <div class="h-overlay"></div>
+      <div class="img-wrap image-hook" style="width:100%;height:450px;position:relative">
+        <img loading="lazy" decoding="async" src="./Image/hook.avif" alt="Product" class="h-prod-img">
+        <div class="h-overlay"></div> 
       </div>
       <div class="hcont">
-        <span class="hbadge">🌿 आयुर्वेदिक केयर फॉर्मूला</span>
-        <h1>Alopecia Areata<span>तंबाकू से बीमारी? अब प्राकृतिक सहायता लें</span></h1>
-        <p class="hook-desc" style="margin-bottom:20px">अगर आप लंबे समय से तंबाकू, गुटखा, पान मसाला, बीड़ी या सिगरेट का
-          सेवन कर रहे हैं — तो इसका असर आपके शरीर के कई महत्वपूर्ण अंगों पर पड़ रहा है।</p>
+        <h1 class="hero-title">⚠️ क्या <span class="hl-word">तंबाकू (गुटखा, पान मसाला, बीड़ी, सिगरेट)</span>
+          <span class="hero-break">खाने से आपको</span>
+          <span class="hl-main">Cancer जैसी भयानक बीमारी</span>
+          <span class="hero-break">हो गई है?</span>
+        </h1>
+        <p class="hook-desc keyline" style="margin-bottom:12px">क्या यह आपके शरीर को <span class="hl-word">अंदर से धीरे-धीरे खत्म</span> कर रहा है?</p>
+        <p class="hook-desc keyline" style="margin-bottom:20px">अगर आप लंबे समय से <span class="hl-word">तंबाकू, गुटखा, पान मसाला, बीड़ी या सिगरेट</span> का सेवन कर रहे हैं,
+          तो इसका असर <span class="hl-main">शरीर के कई महत्वपूर्ण अंगों</span> पर पड़ सकता है।</p>
         <div class="hrisk">
-          <p>⚠️ <strong>भारत में लगभग 40–45% कैंसर</strong> तंबाकू के सेवन से जुड़े होते हैं।</p>
+          <p><strong class="hl-risk">सबसे ज्यादा खतरा इन हिस्सों को होता है:</strong></p>
         </div>
         <div class="horgans">
-          <div class="oitem"><span class="oe">👄</span>मुंह</div>
-          <div class="oitem"><span class="oe">👅</span>जीभ</div>
-          <div class="oitem"><span class="oe">🗣️</span>गला</div>
-          <div class="oitem"><span class="oe">🍽️</span>भोजन नली</div>
-          <div class="oitem"><span class="oe">🫁</span>फेफड़े</div>
+          <div class="oitem"><span class="oe"><img loading="lazy" decoding="async" src="./Image/hook1.avif" style="width: 100%; height: 150px; object-fit: cover;" alt=""></span>मुंह</div>
+          <div class="oitem"><span class="oe"><img loading="lazy" decoding="async" src="./Image/hook2.avif" style="width: 100%; height: 150px; object-fit: cover;" alt=""></span>जीभ</div>
+          <div class="oitem"><span class="oe"><img loading="lazy" decoding="async" src="./Image/hook3.avif" style="width: 100%; height: 150px; object-fit: cover;" alt=""></span>गला</div>
+          <div class="oitem"><span class="oe"><img loading="lazy" decoding="async" src="./Image/hook4.avif" style="width: 100%; height: 150px; object-fit: cover;" alt=""></span>भोजन नली</div>
+          <div class="oitem"><span class="oe"><img loading="lazy" decoding="async" src="./Image/hook5.avif" style="width: 100%; height: 150px; object-fit: cover;" alt=""></span>फेफड़े</div>
         </div>
         <div class="hstat"><strong>40–45%</strong><span>कैंसर केस तंबाकू से जुड़े हैं — भारत में</span></div>
         <a href="#order" class="cta-m">👉 अभी आयुर्वेदिक सहायता लें</a>
@@ -1759,15 +1865,14 @@
     </section>
 
     <!-- ===== 2. SIGNS ===== -->
-    <section class="signs-sec fi">
-      <span class="sl">⚠️ चेतावनी</span>
-      <h2 class="st">🚨 इन संकेतों को बिल्कुल नजरअंदाज न करें</h2>
-      <p style="color:rgba(255,255,255,.8)!important;margin-bottom:28px">अगर आपको इनमें से कोई भी लक्षण महसूस हो, तो
-        तुरंत ध्यान दें:</p>
+    <section class="signs-sec fi" >
+      <span class="sl" style="z-index: 50; position: relative;">⚠️ चेतावनी</span>
+      <h2 class="st" style="z-index: 50; position: relative;">🚨 इन संकेतों को बिल्कुल नजरअंदाज न करें</h2>
+       <p style="color:rgba(255,255,255,.8)!important;margin-bottom:28px ; z-index: 50; position: relative;">अगर आपको इनमें से कोई भी लक्षण महसूस हो, तो
+        तुरंत ध्यान दें:</p> 
 
-      <div class="sign-card">
-        <div class="img-wrap sign-img-clip"><img
-            src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=450&q=70" alt="मुंह में घाव"></div>
+      <div class="sign-card" style="z-index: 0; position: relative;">
+        <div class="img-wrap sign-img-clip"><img loading="lazy" decoding="async" src="./Image/Problem1.avif" alt="मुंह में घाव"></div>
         <div class="sign-txt">
           <div class="sign-icon">❗</div>
           <div class="sign-ttl">मुंह में बार-बार घाव होना</div>
@@ -1775,8 +1880,7 @@
         </div>
       </div>
       <div class="sign-card">
-        <div class="img-wrap sign-img-clip"><img
-            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=450&q=70" alt="गले में दर्द"></div>
+        <div class="img-wrap sign-img-clip"><img loading="lazy" decoding="async" src="./Image/Problem2.avif" alt="गले में दर्द"></div>
         <div class="sign-txt">
           <div class="sign-icon">❗</div>
           <div class="sign-ttl">गले में दर्द या जलन रहना</div>
@@ -1784,8 +1888,7 @@
         </div>
       </div>
       <div class="sign-card">
-        <div class="img-wrap sign-img-clip"><img
-            src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=450&q=70" alt="निगलने में परेशानी">
+        <div class="img-wrap sign-img-clip"><img loading="lazy" decoding="async" src="./Image/Problem3.avif" alt="निगलने में परेशानी">
         </div>
         <div class="sign-txt">
           <div class="sign-icon">❗</div>
@@ -1794,8 +1897,7 @@
         </div>
       </div>
       <div class="sign-card">
-        <div class="img-wrap sign-img-clip"><img
-            src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=450&q=70" alt="मुंह में गांठ"></div>
+        <div class="img-wrap sign-img-clip"><img loading="lazy" decoding="async" src="./Image/Problem4.avif" alt="मुंह में गांठ"></div>
         <div class="sign-txt">
           <div class="sign-icon">❗</div>
           <div class="sign-ttl">मुंह या गले में गांठ महसूस होना</div>
@@ -1803,8 +1905,7 @@
         </div>
       </div>
       <div class="sign-card">
-        <div class="img-wrap sign-img-clip"><img
-            src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=450&q=70" alt="आवाज में बदलाव"></div>
+        <div class="img-wrap sign-img-clip"><img loading="lazy" decoding="async" src="./Image/Problem5.avif" alt="आवाज में बदलाव"></div>
         <div class="sign-txt">
           <div class="sign-icon">❗</div>
           <div class="sign-ttl">आवाज में अचानक बदलाव आना</div>
@@ -1812,8 +1913,7 @@
         </div>
       </div>
       <div class="sign-card">
-        <div class="img-wrap sign-img-clip"><img
-            src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=450&q=70" alt="कमजोरी"></div>
+        <div class="img-wrap sign-img-clip"><img loading="lazy" decoding="async" src="./Image/Problem6.avif" alt="कमजोरी"></div>
         <div class="sign-txt">
           <div class="sign-icon">❗</div>
           <div class="sign-ttl">शरीर में लगातार कमजोरी</div>
@@ -1830,32 +1930,29 @@
       <p style="margin-bottom:16px">हमारा Alopecia Areata Ayurvedic Care Formula शरीर की प्राकृतिक healing process को
         support करता है।</p>
       <div class="sup-hero-wrap img-wrap">
-        <img src="./Image/Product.png" alt="Product">
+        <img loading="lazy" decoding="async" src="./Image/Intro.avif" alt="Product">
       </div>
       <div class="sup-pts">
         <div class="sup-pt">
-          <div class="img-wrap sp-clip"><img
-              src="https://images.unsplash.com/photo-1596910547773-5e9f9ce0ac0d?w=300&q=70" alt="तंबाकू"></div>
+          <div class="img-wrap sp-clip"><img loading="lazy" decoding="async" src="./Image/Intro1.avif" alt="तंबाकू"></div>
           <div class="sp-txt">
             <p>✔ लंबे समय से तंबाकू का सेवन करने वालों के लिए</p>
           </div>
         </div>
         <div class="sup-pt">
-          <div class="img-wrap sp-clip"><img
-              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=300&q=70" alt="मुंह गला"></div>
+          <div class="img-wrap sp-clip"><img loading="lazy" decoding="async" src="./Image/Intro2.avif" alt="मुंह गला"></div>
           <div class="sp-txt">
             <p>✔ मुंह या गले की समस्याओं से परेशान लोगों के लिए</p>
           </div>
         </div>
         <div class="sup-pt">
-          <div class="img-wrap sp-clip"><img
-              src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?w=300&q=70" alt="Detox"></div>
+          <div class="img-wrap sp-clip"><img loading="lazy" decoding="async" src="./Image/Intro3.avif" alt="Detox"></div>
           <div class="sp-txt">
             <p>✔ शरीर को अंदर से Detox करना चाहते हैं</p>
           </div>
         </div>
         <div class="sup-pt">
-          <div class="img-wrap sp-clip"><img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=300&q=70"
+          <div class="img-wrap sp-clip"><img loading="lazy" decoding="async" src="./Image/Intro4.avif"
               alt="आयुर्वेद"></div>
           <div class="sp-txt">
             <p>✔ प्राकृतिक आयुर्वेदिक support चाहते हैं</p>
@@ -1871,7 +1968,7 @@
       <p style="margin-bottom:6px">इस आयुर्वेदिक फॉर्मूला का उद्देश्य है आपके शरीर को अंदर से सशक्त बनाना।</p>
       <div class="bn-list">
         <div class="bn-node">
-          <div class="img-wrap bn-clip"><img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=450&q=70"
+          <div class="img-wrap bn-clip"><img loading="lazy" decoding="async" src="./Image/Improve2.avif"
               alt="Immunity"></div>
           <div class="bn-txt">
             <h4>✅ Immunity को मजबूत बनाना</h4>
@@ -1879,24 +1976,21 @@
           </div>
         </div>
         <div class="bn-node">
-          <div class="img-wrap bn-clip"><img
-              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=450&q=70" alt="Cell Repair"></div>
+          <div class="img-wrap bn-clip"><img loading="lazy" decoding="async" src="./Image/Improve1.avif" alt="Cell Repair"></div>
           <div class="bn-txt">
             <h4>✅ Cells की Repair Process को Support</h4>
             <p>क्षतिग्रस्त कोशिकाओं की मरम्मत में सहायक जड़ी-बूटियों का समावेश।</p>
           </div>
         </div>
         <div class="bn-node">
-          <div class="img-wrap bn-clip"><img
-              src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?w=450&q=70" alt="Detox"></div>
+          <div class="img-wrap bn-clip"><img loading="lazy" decoding="async" src="./Image/Improve3.avif" alt="Detox"></div>
           <div class="bn-txt">
             <h4>✅ शरीर से Toxins बाहर निकालना</h4>
             <p>हानिकारक तत्वों को शरीर से बाहर निकालने में मदद करता है।</p>
           </div>
         </div>
         <div class="bn-node">
-          <div class="img-wrap bn-clip"><img
-              src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=450&q=70" alt="Recovery"></div>
+          <div class="img-wrap bn-clip"><img loading="lazy" decoding="async" src="./Image/Improve4.avif" alt="Recovery"></div>
           <div class="bn-txt">
             <h4>✅ Overall Health Recovery को Support</h4>
             <p>संपूर्ण स्वास्थ्य सुधार में सहायक, शरीर को फिर से शक्ति देता है।</p>
@@ -1913,8 +2007,7 @@
       <div class="herbs-grid">
         <div class="herb-cell">
           <div class="img-wrap hc-clip">
-            <div class="herb-num">1</div><img
-              src="./Image/Ind1.png" alt="अश्वगंधा">
+            <div class="herb-num">1</div><img loading="lazy" decoding="async" src="./Image/Ind1.avif" alt="अश्वगंधा">
           </div>
           <div class="herb-info">
             <h4>🌿 अश्वगंधा</h4>
@@ -1923,7 +2016,7 @@
         </div>
         <div class="herb-cell">
           <div class="img-wrap hc-clip">
-            <div class="herb-num">2</div><img src="./Image/Ind2.png" alt="गिलोय">
+            <div class="herb-num">2</div><img loading="lazy" decoding="async" src="./Image/Ind2.avif" alt="गिलोय">
               alt="गिलोय">
           </div>
           <div class="herb-info">
@@ -1933,8 +2026,7 @@
         </div>
         <div class="herb-cell">
           <div class="img-wrap hc-clip">
-            <div class="herb-num">3</div><img
-              src="./Image/Ind3.png" alt="हल्दी">
+            <div class="herb-num">3</div><img loading="lazy" decoding="async" src="./Image/Ind3.avif" alt="हल्दी">
           </div>
           <div class="herb-info">
             <h4>🌿 हल्दी</h4>
@@ -1943,8 +2035,7 @@
         </div>
         <div class="herb-cell">
           <div class="img-wrap hc-clip">
-            <div class="herb-num">4</div><img
-              src="./Image/Ind4.png" alt="तुलसी">
+            <div class="herb-num">4</div><img loading="lazy" decoding="async" src="./Image/Ind4.avif" alt="तुलसी">
           </div>
           <div class="herb-info">
             <h4>🌿 तुलसी</h4>
@@ -1953,7 +2044,7 @@
         </div>
         <!-- <div class="herb-cell">
           <div class="img-wrap hc-clip">
-            <div class="herb-num">5</div><img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=300&q=70"
+            <div class="herb-num">5</div><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=300&q=70"
               alt="अन्य">
           </div>
           <div class="herb-info">
@@ -1963,9 +2054,9 @@
         </div> -->
       </div>
       <div class="cert-strip">
-        <div class="cert-b"><span class="ci"><img style="width:94px;height:94px;border-radius: 50%;" src="./Image/Trust1.png" alt=""></span>100% Herbal</div>
-        <div class="cert-b"><span class="ci"><img style="width:94px;height:94px;border-radius: 50%;" src="./Image/Trust2.png" alt=""></span>GMP Certified</div>
-        <div class="cert-b"><span class="ci"><img style="width:94px;height:94px;border-radius: 50%;" src="./Image/Trust3.png" alt=""></span>Quality Tested</div>
+        <div class="cert-b"><span class="ci"><img loading="lazy" decoding="async" style="width:94px;height:94px;border-radius: 50%;" src="./Image/Trust1.avif" alt=""></span>100% Herbal</div>
+        <div class="cert-b"><span class="ci"><img loading="lazy" decoding="async" style="width:94px;height:94px;border-radius: 50%;" src="./Image/Trust2.avif" alt=""></span>GMP Certified</div>
+        <div class="cert-b"><span class="ci"><img loading="lazy" decoding="async" style="width:94px;height:94px;border-radius: 50%;" src="./Image/Trust3.avif" alt=""></span>Quality Tested</div>
       </div>
     </section>
 
@@ -1975,9 +2066,9 @@
       <h2 class="st">पहले और अब — Before / After</h2>
       <p>देखें कैसे शरीर में आता है बदलाव:</p>
       <div class="ba-vis">
-        <div class="ba-half ba-before"><img src="./Image/before.png"
+        <div class="ba-half ba-before"><img loading="lazy" decoding="async" src="./Image/before.avif"
             alt="Before"></div>
-        <div class="ba-half ba-after"><img src="./Image/after.png"
+        <div class="ba-half ba-after"><img loading="lazy" decoding="async" src="./Image/after.avif"
             alt="After"></div>
         <div class="ba-div"></div>
         <div class="ba-lbl before">पहले</div>
@@ -1988,22 +2079,19 @@
           <div class="ba-ch">❌ पहले</div>
           <div class="ba-cb">
             <div class="ba-pt">
-              <div class="bpc img-wrap"><img
-                  src="./Image/before2.png" alt="घाव"></div>
+              <div class="bpc img-wrap"><img loading="lazy" decoding="async" src="./Image/before2.avif" alt="घाव"></div>
               <div class="ba-ptext">मुंह में बार-बार घाव होना</div>
             </div>
             <div class="ba-pt">
-              <div class="bpc img-wrap"><img
-                  src="./Image/before1.png" alt="जलन"></div>
+              <div class="bpc img-wrap"><img loading="lazy" decoding="async" src="./Image/before1.avif" alt="जलन"></div>
               <div class="ba-ptext">गले में जलन और दर्द</div>
             </div>
             <div class="ba-pt">
-              <div class="bpc img-wrap"><img
-                  src="./Image/before4.png" alt="खाना"></div>
+              <div class="bpc img-wrap"><img loading="lazy" decoding="async" src="./Image/before4.avif" alt="खाना"></div>
               <div class="ba-ptext">खाना निगलने में तकलीफ</div>
             </div>
             <div class="ba-pt">
-              <div class="bpc img-wrap"><img src="./Image/before3.png"
+              <div class="bpc img-wrap"><img loading="lazy" decoding="async" src="./Image/before3.avif"
                   alt="कमजोरी"></div>
               <div class="ba-ptext">शरीर में लगातार कमजोरी</div>
             </div>
@@ -2013,23 +2101,20 @@
           <div class="ba-ch">✔ अब</div>
           <div class="ba-cb">
             <div class="ba-pt">
-              <div class="bpc img-wrap"><img
-                  src="./Image/after1.png" alt="immunity"></div>
+              <div class="bpc img-wrap"><img loading="lazy" decoding="async" src="./Image/after1.avif" alt="immunity"></div>
               <div class="ba-ptext">Immunity को support</div>
             </div>
             <div class="ba-pt">
-              <div class="bpc img-wrap"><img src="./Image/after2.png"
+              <div class="bpc img-wrap"><img loading="lazy" decoding="async" src="./Image/after2.avif"
                   alt="देखभाल"></div>
               <div class="ba-ptext">मुंह-गले की देखभाल</div>
             </div>
             <div class="ba-pt">
-              <div class="bpc img-wrap"><img
-                  src="./Image/after3.png" alt="healing"></div>
+              <div class="bpc img-wrap"><img loading="lazy" decoding="async" src="./Image/after3.avif" alt="healing"></div>
               <div class="ba-ptext">Natural Healing support</div>
             </div>
             <div class="ba-pt">
-              <div class="bpc img-wrap"><img
-                  src="./Image/after4.png" alt="recovery"></div>
+              <div class="bpc img-wrap"><img loading="lazy" decoding="async" src="./Image/after4.avif" alt="recovery"></div>
               <div class="ba-ptext">Overall health recovery</div>
             </div>
           </div>
@@ -2042,8 +2127,7 @@
       <span class="sl">👨‍⚕️ विशेषज्ञ राय</span>
       <h2 class="st">आयुर्वेद विशेषज्ञों की राय</h2>
       <div class="exp-hero">
-        <div class="exp-av-clip img-wrap"><img
-            src="./Image/doctor.png" alt="Expert"></div>
+        <div class="exp-av-clip img-wrap"><img loading="lazy" decoding="async" src="./Image/doctor.avif" alt="Expert"></div>
         <div class="exp-meta">
           <h4>डॉ. रामेश्वर शर्मा</h4><span>🌿 वरिष्ठ आयुर्वेद विशेषज्ञ — 20+ वर्ष अनुभव</span>
         </div>
@@ -2054,12 +2138,9 @@
       <p style="margin-bottom:20px">इस Ayurvedic Care Formula को पारंपरिक जड़ी-बूटियों के आधार पर तैयार किया गया है जो
         शरीर की overall health को support करता है।</p>
       <div class="exp-imgs">
-        <div class="exp-img-clip img-wrap"><img
-            src="./Image/doctor1.png" alt="Ayurveda"></div>
-        <div class="exp-img-clip img-wrap"><img
-            src="./Image/doctor2.png" alt="Herbs"></div>
-        <div class="exp-img-clip img-wrap"><img
-            src="./Image/doctor3.png" alt="Natural"></div>
+        <div class="exp-img-clip img-wrap"><img loading="lazy" decoding="async" src="./Image/doctor1.avif" alt="Ayurveda"></div>
+        <div class="exp-img-clip img-wrap"><img loading="lazy" decoding="async" src="./Image/doctor2.avif" alt="Herbs"></div>
+        <div class="exp-img-clip img-wrap"><img loading="lazy" decoding="async" src="./Image/doctor3.avif" alt="Natural"></div>
       </div>
     </section>
 
@@ -2069,7 +2150,7 @@
       <h2 class="st">एक सच्ची कहानी</h2>
       <div class="story-person">
         <div class="sp-img-clip img-wrap">
-          <img src="./Image/Story1.png" alt="रामलाल">
+          <img loading="lazy" decoding="async" src="./Image/Story1.avif" alt="रामलाल">
         </div>
         <div class="sp-overlay">
           <div class="sp-name">रामलाल (नाम बदला हुआ)</div>
@@ -2080,7 +2161,7 @@
         उन्हें मुंह में हल्का घाव हुआ — जिसे उन्होंने नजरअंदाज किया।</p>
       <div class="story-tl">
         <div class="s-step">
-          <div class="ss-clip img-wrap"><img src="./Image/Story4.png"
+          <div class="ss-clip img-wrap"><img loading="lazy" decoding="async" src="./Image/Story4.avif"
               alt="Step 1"></div>
           <div class="ss-info">
             <h5>पहला संकेत — मुंह में घाव</h5>
@@ -2088,15 +2169,14 @@
           </div>
         </div>
         <div class="s-step">
-          <div class="ss-clip img-wrap"><img
-              src="./Image/Story3.png" alt="Step 2"></div>
+          <div class="ss-clip img-wrap"><img loading="lazy" decoding="async" src="./Image/Story3.avif" alt="Step 2"></div>
           <div class="ss-info">
             <h5>दूसरा चरण — गले में दर्द, खाने में तकलीफ</h5>
             <p>धीरे-धीरे गले में दर्द बढ़ा और खाना निगलना मुश्किल हो गया।</p>
           </div>
         </div>
         <div class="s-step">
-          <div class="ss-clip img-wrap"><img src="./Image/Story2.png"
+          <div class="ss-clip img-wrap"><img loading="lazy" decoding="async" src="./Image/Story2.avif"
               alt="Step 3"></div>
           <div class="ss-info">
             <h5>जागरूकता और जीवन बदलाव</h5>
@@ -2125,11 +2205,11 @@
         <div class="cert-b" style="background:rgba(0,0,0,.3)"><span class="ci">🔬</span>Quality Tested</div>
       </div>
       <div class="trust-imgs">
-        <div class="ti-clip img-wrap"><img src="./Image/Trust1.png"
+        <div class="ti-clip img-wrap"><img loading="lazy" decoding="async" src="./Image/Trust1.avif"
             alt=""></div>
-        <div class="ti-clip img-wrap"><img src="./Image/Trust2.png"
+        <div class="ti-clip img-wrap"><img loading="lazy" decoding="async" src="./Image/Trust2.avif"
             alt=""></div>
-        <div class="ti-clip img-wrap"><img src="./Image/Trust3.png"
+        <div class="ti-clip img-wrap"><img loading="lazy" decoding="async" src="./Image/Trust3.avif"
             alt=""></div>
       </div>
     </section>
@@ -2217,8 +2297,7 @@
 
       <div class="rev-card">
         <div class="rev-top">
-          <div class="rev-av-clip img-wrap"><img
-              src="./Image/Client1.png" alt="Rajesh"></div>
+          <div class="rev-av-clip img-wrap"><img loading="lazy" decoding="async" src="./Image/Client1.avif" alt="Rajesh"></div>
           <div class="rev-meta">
             <h5>राजेश कुमार</h5>
             <div class="rl">📍 दिल्ली</div>
@@ -2233,8 +2312,7 @@
 
       <div class="rev-card">
         <div class="rev-top">
-          <div class="rev-av-clip img-wrap"><img
-              src="./Image/Client2.png" alt="Suresh"></div>
+          <div class="rev-av-clip img-wrap"><img loading="lazy" decoding="async" src="./Image/Client2.avif" alt="Suresh"></div>
           <div class="rev-meta">
             <h5>सुरेश पटेल</h5>
             <div class="rl">📍 गुजरात</div>
@@ -2248,8 +2326,7 @@
 
       <div class="rev-card">
         <div class="rev-top">
-          <div class="rev-av-clip img-wrap"><img
-              src="./Image/Client3.png" alt="Priya"></div>
+          <div class="rev-av-clip img-wrap"><img loading="lazy" decoding="async" src="./Image/Client3.avif" alt="Priya"></div>
           <div class="rev-meta">
             <h5>प्रिया वर्मा</h5>
             <div class="rl">📍 मुंबई</div>
